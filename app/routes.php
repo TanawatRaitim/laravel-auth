@@ -11,7 +11,20 @@
 |
 */
 
+//Route::post
+//Route::any
+
+
+/**
 Route::get('/', function()
 {
 	return View::make('hello');
 });
+ * 
+ */
+ 
+ 
+ Route::get('/',array(		//home page
+ 					'as'=>'home',		//define a name
+ 					'uses'=>'HomeController@home'		//controll@method
+					));
