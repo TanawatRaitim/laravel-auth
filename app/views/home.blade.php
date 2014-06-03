@@ -1,9 +1,13 @@
 @extends('layout.main') 		{{--extents layout/main.blade.php--}}
 
 @section('content')				{{--start @section content--}}
-	content here	
-@stop
- 							{{--end @section content--}}
-@section('big')
-	test section big
-@stop	
+	
+	@if(Auth::check())
+		<p>Hello, {{ Auth::user()->username }}.</p>
+	@else
+		<p>You are not sign in.</p>
+	@endif
+	
+		
+@stop 							{{--end @section content--}}
+	
