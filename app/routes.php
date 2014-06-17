@@ -11,19 +11,6 @@
 |
 */
 
-//Route::post
-//Route::any
-
-
-/**
-Route::get('/', function()
-{
-	return View::make('hello');
-});
- * 
- */
- 
- 
 Route::get('/',array(		//home page
 	'as'=>'home',		//define a name
 	'uses'=>'HomeController@home'		//controll@method
@@ -97,9 +84,32 @@ Route::group(array('before'=>'guest'),function(){
 			'as'=>'account-sign-in-post',
 			'uses'=>'AccountController@postSignIn'
 		));
+		
+		/**
+		 * Forgot password(POST)
+		 */
+		Route::post('/account/forgot-password',array(
+			'as'=>'account-forgot-password-post',
+			'uses'=>'AccountController@postForgotPassword'
+		));
 		 
 	});
 	
+	
+	/**
+	 * Forgot password (GET)
+	 */
+	 Route::get('/account/forgot-password',array(
+	 	'as'=>'account-forgot-password',
+	 	'uses'=>'AccountController@getForgotPassword'
+	 ));
+	 
+	 Route::get('/account/recover/{code}', array(
+	 	'as'=>'account-recover',
+	 	'uses'=>'AccountController@getRecover'
+	 ));
+	 
+	 
 	
 	/*
 	 * Sign in (GET)
