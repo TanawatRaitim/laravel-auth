@@ -4,7 +4,7 @@
 	<form action="" method="post">
 		
 		<div class="field">
-			Email: <input type="text" name="email" {{ (Input::old('email')) ? 'value = "'.e(Input::old('email')).'"' : '' }} autofocus />
+			Email: <input type="text" name="email" autocomplete="off" {{ (Input::old('email')) ? 'value = "'.e(Input::old('email')).'"' : '' }} autofocus />
 			@if($errors->has('email'))
 				{{ $errors->first('email') }}
 			@endif

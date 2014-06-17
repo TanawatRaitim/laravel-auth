@@ -44,6 +44,22 @@ Route::get('/',array(		//home page
 	 
 	 
 	 /**
+	  * CSRF protection group
+	  */
+	 Route::group(array('before'=>'csrf'),function(){
+	 	
+		/**
+		  * Change Password(POST)
+		  */ 
+		 Route::post('/account/change-password',array(
+		 	'as'=>'account-change-password-post',
+		 	'uses'=>'AccountController@postChangePassword'
+		 ));
+	 });
+	 
+	 
+	 
+	 /**
 	  * Change Password(GET)
 	  */ 
 	 Route::get('/account/change-password',array(
