@@ -42,8 +42,19 @@ Route::get('/',array(		//home page
 	 	'uses'=>'AccountController@getSignOut'
 	 ));
 	 
+	 
+	 /**
+	  * Change Password(GET)
+	  */ 
+	 Route::get('/account/change-password',array(
+	 	'as'=>'account-change-password',
+	 	'uses'=>'AccountController@getChangePassword'
+	 ));
+	 
  });
  
+
+
 
 /**
  * Unauthenticated group 
