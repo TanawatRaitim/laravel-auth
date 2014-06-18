@@ -128,8 +128,6 @@ class AccountController extends BaseController{
 		if($user->count()){
 			$user = $user->first();
 			
-			// echo '<pre>', print_r($user) , '</pre>';
-			
 			
 			//Update user to active state
 			$user->active = 1;
