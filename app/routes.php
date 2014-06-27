@@ -16,6 +16,8 @@ Route::get('/',array(		//home page
 	'uses'=>'HomeController@home'		//controll@method
 ));
 
+
+
 /**
  * Authenticated group
  */
@@ -54,7 +56,7 @@ Route::get('/',array(		//home page
 	 	'uses'=>'AccountController@getChangePassword'
 	 ));
 	 
- });
+ }); //Authenticated group
  
 
 
@@ -136,4 +138,4 @@ Route::group(array('before'=>'guest'),function(){
 	 ));
 	 
 	
-});
+});	//Unauthenticated group 
